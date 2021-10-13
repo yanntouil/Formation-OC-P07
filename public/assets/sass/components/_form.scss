@@ -1,0 +1,29 @@
+/**
+ * Form component
+ */
+
+
+
+
+
+.input-group {
+    --height: 4.3125rem;
+    display: flex; align-items: center;
+    width: 100%; height: var(--height);
+    margin-bottom: 1.5625rem;
+    border-radius: $form-radius;
+    background-color: $form-input-bgc;
+    .form-control {
+        flex-grow: 1;
+        margin-right: calc(var(--height) * -1);
+        padding: 1.375rem var(--height) 1.375rem 1.375rem;
+    }
+    .form-label {
+        display: flex; justify-content: center; align-items: center;
+        width: var(--height); height: var(--height);
+        svg {
+            width: 1.875rem; height: 1.875rem;
+        }
+    }
+}
+ 

@@ -1,0 +1,58 @@
+/**
+ * Layout header
+ */
+
+
+
+
+
+
+.header {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2.625rem 6.25rem 1.0625rem;
+    &-logo {
+        display: block;
+        width: 16.75rem; height: 5.8125rem;
+    }
+}
+
+
+
+
+.main {
+    flex-grow: 1;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 6.25rem 2.625rem;
+}
+
+
+
+
+.search {
+    width: 100%;
+    &-tags {
+        display: flex; flex-wrap: wrap;
+        padding-bottom: 0.9375rem;
+        gap: 1.25rem;
+    }
+    &-filters {
+        display: flex;
+        margin-bottom: 1.5625rem;
+        gap: 1.25rem;
+    }
+}
+
+
+
+
+.recipes {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 3.125rem;
+}

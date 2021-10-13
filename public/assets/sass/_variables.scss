@@ -1,0 +1,47 @@
+/**
+ * Variable
+ */
+
+
+
+
+// Breakpoint
+$breakpoints: (
+    'sm':   640px,
+    'md':   768px,
+    'lg':   1024px,
+    'xl':   1280px,
+    '2xl':  1536px
+    ) !default;
+
+// Colors
+$primary:       #3282F7;
+$secondary:     #E7E7E7;
+$success:       #68D9A4;
+$danger:        #ED6454;
+$black:         #000000;
+$white:         #FFFFFF;
+
+// Font
+$font-family:   'Lato', sans-serif;
+$font-size:     1.125rem;
+$line-height:   1.2;
+$font-normal:   400;
+$font-bold:     700;
+
+// Card
+$card-picture-bgc:   #C7BEBE;
+$card-bgc: $secondary;
+$card-radius: 0.3125rem; 
+
+// Form
+$placeholder: rgba($black, .25);
+$form-input-bgc: $secondary;
+$form-radius: 0.3125rem;
+
+// Tag
+$tag-radius: 0.3125rem;
+
+
+
+

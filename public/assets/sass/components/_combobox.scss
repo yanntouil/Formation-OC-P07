@@ -1,0 +1,123 @@
+/**
+ * Combobox component
+ */
+
+
+
+
+
+
+.combobox {
+    position: relative;
+    display: flex;
+    width: 10.625rem; height: 4.3125rem;
+    transition: width .2s ease-in-out;
+    &.expanded {
+        width: 41.6875rem;
+    }
+    &.active:not(.expanded) {
+        width: 13.9375rem;
+    }
+    &-wrapper {
+        position: absolute; top: 0;right: 0; left: 0;
+        display: flex; flex-direction: column;
+        padding: 0 0.9375rem;
+        height: auto;
+        border-radius: $tag-radius;
+        color: $white;
+    }
+    &-primary &-wrapper {
+        background-color: $primary;
+    }
+    &-danger &-wrapper {
+        background-color: $danger;
+    }
+    &-success &-wrapper {
+        background-color: $success;
+    }
+    &.expanded {
+        &-input::placeholder {
+            color: rgba($white, 0.5);
+        }
+    }
+
+    &-control {
+        flex-shrink: 0;
+        display: flex; align-items: center;
+        width: 100%; height: 4.3125rem;
+        gap: 0.9375rem;
+        &-label {
+            flex-grow: 1;
+            font-weight: $font-bold;
+        }
+        &-input {
+            flex-grow: 1;
+            outline: none;
+            font-weight: $font-bold;
+            &::placeholder {
+                color: rgba($white, 0.5);
+                //color: $white;
+            }
+            /*.combobox.expanded &::placeholder {
+                color: rgba($white, 0.5);
+            }*/
+        }
+        &-expand {
+            flex-shrink: 0;
+            display: flex; justify-content: center; align-items: center;
+            width: 1.5rem; height: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform .3s ease-in-out;
+            transform: rotate(0);
+            svg {
+                width: 1rem; height: 0.6875rem;
+            }
+            .combobox.expanded &, .combobox.active & {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &-results {
+        display: grid;
+        padding-bottom: 0.9375rem;
+        margin-right: -0.9375rem;
+        max-height: 19.5rem;
+        overflow-y: auto;
+        gap: 0.625rem;
+        scrollbar-width: thin;
+        li { 
+            cursor: pointer;
+        }
+        .combobox.expanded & {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 0.25rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            border-radius: 10px;
+            border-width: 1px;
+            background: $white; 
+        }
+        .combobox-primary &::-webkit-scrollbar-thumb {
+            border: 1px solid $primary;
+            background: darken($primary, 6);
+        }
+        .combobox-danger &::-webkit-scrollbar-thumb {
+            border: 1px solid $danger;
+            background: darken($danger, 6);
+        }
+        .combobox-success &::-webkit-scrollbar-thumb {
+            border: 1px solid $success;
+            background: darken($success, 6);
+        }
+    }
+}

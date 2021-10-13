@@ -1,0 +1,30 @@
+/**
+ * Les petits plats
+ * Main sass file
+ */
+
+@use 'sass:math';
+
+// Variables
+@import 'variables';
+
+// Reset
+@import 'reset';
+
+// Mixins
+@import 'mixins/media-queries';
+
+// Components
+@import 'components/card'; 
+@import 'components/combobox'; 
+@import 'components/form'; 
+@import 'components/tag'; 
+
+// Layout
+@import 'base';
+@import 'layout';
+
+
+
+
+

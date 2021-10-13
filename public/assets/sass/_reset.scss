@@ -1,0 +1,65 @@
+/**
+ * Soft reset
+ */
+
+
+
+
+
+ *, *::before, *::after {
+    box-sizing: border-box;
+    min-width: 0;
+}
+html {
+    -webkit-tap-highlight-color: transparent;// Avertissements on CSS Validation
+    -webkit-text-size-adjust: 100%;// Avertissements on CSS Validation
+    overflow-wrap: break-word;
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+}
+ul, ol, li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style: none;
+}
+img, svg {
+    vertical-align: middle;
+    border-style: none;
+}
+svg:not([fill]) {
+    fill: currentColor;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+button, input {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+}
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;// Avertissements on CSS Validation
+    clip-path: inset(50%) !important;// Avertissements on CSS Validation
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
