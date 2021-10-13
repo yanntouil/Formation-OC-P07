@@ -140,7 +140,7 @@ button, input {
   width: 41.6875rem;
 }
 .combobox.active:not(.expanded) {
-  width: 13.9375rem;
+  width: 17rem;
 }
 .combobox-wrapper {
   position: absolute;
@@ -182,9 +182,6 @@ button, input {
   flex-grow: 1;
   outline: none;
   font-weight: 700;
-  /*.combobox.expanded &::placeholder {
-      color: rgba($white, 0.5);
-  }*/
 }
 .combobox-control-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -353,7 +350,6 @@ b {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 90rem;

@@ -6,6 +6,7 @@
 
 
 import Ingredient from "./Ingredient.js";
+import Tag from "./Tag.js";
 
 /**
  * @class Recipe
@@ -37,12 +38,13 @@ export default class Recipe {
         this.servings = data.servings;
         this.time = data.time;
         this.description = data.description;
-        this.appliance = data.appliance;
-        this.ustensils = data.ustensils;
+        this.appliance = data.appliance.toLowerCase();
+
+        this.ustensils = [];
+        data.ustensils.forEach((ustensil) => this.ustensils.push(ustensil.toLowerCase()));
+
         this.ingredients = [];
-        data.ingredients.forEach(
-            (ingredient) => this.ingredients.push(new Ingredient(ingredient))
-        );
+        data.ingredients.forEach( (ingredient) => this.ingredients.push(new Ingredient(ingredient)));
     }
 
     /**
@@ -54,6 +56,17 @@ export default class Recipe {
         if (this.description.length <= limit) return this.description;
         let description = this.description.substr(0, limit - 1);
         return description.substr(0, description.lastIndexOf(" ")) + " &hellip;";
+    }
+
+    /**
+     * Short description
+     * @param {Tag} tag
+     * @returns {boolean}
+     */
+    tagAvailable (tag) {
+        if (tag.type == 'ingredients') return !! this.ingredients.find((ingredient) => ingredient.name == tag.name);
+        if (tag.type == 'ustensils') return this.ustensils.includes(tag.name);
+        if (tag.type == 'appliances') return this.appliance == tag.name;
     }
 
     /**

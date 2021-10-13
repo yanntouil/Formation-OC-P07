@@ -22,7 +22,7 @@ export default class Ingredient {
      * @param {undefined|string} data.unit
      */
     constructor(data) {
-        this.name = data.ingredient;
+        this.name = data.ingredient.toLowerCase();
         if (data.quantity) this.quantity = data.quantity;
         if (data.unit) this.unit = data.unit;
     }
