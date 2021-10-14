@@ -1,6 +1,6 @@
 # Projet 7 - Développeur Front-End
 
-[Page disponible sur GitHub Pages](https://yanntouil.github.io/YannTouil_7_11102021/puclic/)
+[Page disponible sur GitHub Pages](https://yanntouil.github.io/YannTouil_7_11102021/puclic/index.html)
 
 ## Développez un algorithme de recherche en JavaScript
 
