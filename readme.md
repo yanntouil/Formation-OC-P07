@@ -1,5 +1,7 @@
 # Projet 7 - Développeur Front-End
 
+[Page disponible sur GitHub Pages](https://yanntouil.github.io/YannTouil_7_11102021/)
+
 ## Développez un algorithme de recherche en JavaScript
 
 Vous êtes freelance et vous venez d’être missionné par l’entreprise “Les petits plats” en temps que Développeur Front-end pour une mission de 3 mois. 
