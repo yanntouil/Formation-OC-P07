@@ -294,7 +294,7 @@ export default {
     filterSearch(recipes) {
         // Search into name, description, appliance, ingredients name, ustensils
         //const t0 = performance.now(), q = recipes.length;
-        //const term = this.dom.search.value.toLowerCase();
+        const term = this.dom.search.value.toLowerCase();
         recipes = recipes.filter((recipe) => {
             if (recipe.name.includes(term)) return true;
             if (recipe.description.toLowerCase().includes(term)) return true;
