@@ -92,7 +92,7 @@ export default class Recipe {
         `;
         let ingredients = elRecipe.querySelector('.card-body-ingredients');
         this.ingredients.forEach((ingredient) => {
-            if (ingredient.quantity) ingredients.innerHTML += `<div class="ingredient"><b>${ingredient.name}:</b> ${ingredient.quantity} ${(ingredient.unit) ? ingredient.unit : ''}</div>`;
+            if (ingredient.quantity) ingredients.innerHTML += `<div class="ingredient"><b>${ingredient.name.charAt(0).toUpperCase() + ingredient.name.slice(1)}:</b> ${ingredient.quantity} ${(ingredient.unit) ? ingredient.unit : ''}</div>`;
             else ingredients.innerHTML += `<div class="ingredient"><b>${ingredient.name}</div>`;
         });
         return elRecipe;

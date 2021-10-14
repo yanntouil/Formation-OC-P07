@@ -265,7 +265,7 @@ export default {
     applyFilterRecipes () {
         let filtered = [];
         if (this.dom.search.value.length < 3) filtered = this.recipes;
-        else filtered = this.filterSearch(filtered);// Search filter
+        else filtered = this.filterSearch(this.recipes);// Search filter
         this.checkStateTags(filtered);// Clear invalid active tags
         filtered = this.filterTags(filtered);// Tags filter
         this.updateAvailableTags(filtered);
@@ -289,8 +289,21 @@ export default {
     /**
      * 
      * @param {Array.<Recipe>} recipes 
+     * @returns {Array.<Recipe>} 
      */
     filterSearch(recipes) {
+        // Search into name, description, appliance, ingredients name, ustensils
+        //const t0 = performance.now(), q = recipes.length;
+        //const term = this.dom.search.value.toLowerCase();
+        recipes = recipes.filter((recipe) => {
+            if (recipe.name.includes(term)) return true;
+            if (recipe.description.toLowerCase().includes(term)) return true;
+            if (recipe.appliance.includes(term)) return true;
+            if (!!recipe.ingredients.find((ingredient) => ingredient.name.includes(term))) return true;
+            if (!!recipe.ustensils.find((ustensil) => ustensil.includes(term))) return true;
+            return false;
+        });
+        //const t1 = performance.now(); console.log(`Search time ${t1 - t0} ms | ${(t1 - t0) / q} per recipe`);
         return recipes;
     },
     
