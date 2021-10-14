@@ -265,7 +265,7 @@ export default {
     applyFilterRecipes () {
         let filtered = [];
         if (this.dom.search.value.length < 3) filtered = this.recipes;
-        else filtered = this.filterSearch(filtered);// Search filter
+        else filtered = this.filterSearch(this.recipes);// Search filter
         this.checkStateTags(filtered);// Clear invalid active tags
         filtered = this.filterTags(filtered);// Tags filter
         this.updateAvailableTags(filtered);
@@ -287,11 +287,43 @@ export default {
     },
     
     /**
-     * 
-     * @param {Array.<Recipe>} recipes 
+     * Filter search
+     * @param {Array.<Recipe>} recipes
+     * @returns {Array.<Recipe>}
      */
     filterSearch(recipes) {
-        return recipes;
+        // Search into name, description, appliance, ingredients name, ustensils
+        const term = this.dom.search.value.toLowerCase();
+        const filtered = [];
+        for (let i = 0; i < recipes.length; i++) {
+            const recipe = recipes[i];
+            if (recipe.name.includes(term)) filtered.push(recipe);
+            else if (recipe.description.toLowerCase().includes(term)) filtered.push(recipe);
+            else if (recipe.appliance.includes(term)) filtered.push(recipe);
+            else {
+                let find = false;
+                let ii = 0;
+                while (ii < recipe.ingredients.length) {
+                    const ingredient = recipe.ingredients[ii].name;
+                    if (find = ingredient.includes(term)) {
+                        filtered.push(recipe);
+                        break;
+                    }
+                    ii++;
+                }
+                if (find) continue;
+                ii = 0;
+                while (ii < recipe.ustensils.length) {
+                    const ustensil = recipe.ustensils[ii];
+                    if (find = ustensil.includes(term)) {
+                        filtered.push(recipe);
+                        break;
+                    }
+                    ii++;
+                }
+            }
+        }
+        return filtered;
     },
     
     /**
