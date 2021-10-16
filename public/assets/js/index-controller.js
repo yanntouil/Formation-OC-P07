@@ -287,7 +287,7 @@ export default {
     },
     
     /**
-     * 
+     * Filter Search
      * @param {Array.<Recipe>} recipes 
      * @returns {Array.<Recipe>} 
      */
@@ -308,7 +308,7 @@ export default {
     },
     
     /**
-     * 
+     * Filter tag
      * @param {Array.<Recipe>} recipes 
      */
     filterTags(recipes) {
